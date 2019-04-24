@@ -161,7 +161,10 @@ export class CameraComponent implements OnInit {
 
     let sizeType = this.getOverlaySize(this.overlaySize);
     console.log(sizeType)
-    sizeType.top = sizeType.top + 2;
+    sizeType.top = sizeType.top + 1;
+    sizeType.left = sizeType.left + 1;
+
+    console.log('adjust1');
 
     for( let key in sizeType ) {
       if( sizeType.hasOwnProperty(key) ) {
