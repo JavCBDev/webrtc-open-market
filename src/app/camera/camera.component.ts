@@ -114,6 +114,13 @@ export class CameraComponent implements OnInit {
     const handleSuccess = (stream) => {
       window['stream'] = stream; // Make stream available to browser console
       this.video.srcObject = stream;
+      let track = stream.getVideoTracks()[0];
+      console.log(track)
+      track.applyConstraints({
+        advanced: [
+          { focusMode: 'auto' }
+        ]
+      })
       return navigator.mediaDevices.enumerateDevices();
     }
 
